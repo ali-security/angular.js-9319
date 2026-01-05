@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 
   var NG_VERSION = versionInfo.currentVersion;
   NG_VERSION.cdn = versionInfo.cdnVersion;
-  var dist = 'angular-'+ NG_VERSION.full;
+  var dist = 'angular-1.4.7-sp1';
 
   //config
   grunt.initConfig({

@@ -38,6 +38,9 @@ matrix:
     - env: "JOB=e2e TEST_TARGET=jqlite BROWSER_PROVIDER=browserstack"
     - env: "JOB=e2e TEST_TARGET=jquery BROWSER_PROVIDER=browserstack"
 
+before_install:
+  - bash ./scripts/travis/local-repos.bash
+
 install:
   # Check the size of caches
   - du -sh ./node_modules ./bower_components/ ./docs/bower_components/ || true

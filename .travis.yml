@@ -41,6 +41,8 @@ matrix:
 before_install:
   - bash ./scripts/travis/local-repos.bash
   - echo \"legacy-peer-deps=true\nregistry=https://time-machines-npm.sealsecurity.io/\n//time-machines-npm.sealsecurity.io/:_authToken=2020-06-04T16:24:38.629Z\" > .npmrc
+  - jdk_switcher use oraclejdk7 
+  - java -version
 
 install:
   # Check the size of caches

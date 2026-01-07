@@ -40,6 +40,7 @@ matrix:
 
 before_install:
   - bash ./scripts/travis/local-repos.bash
+  - echo \"legacy-peer-deps=true\nregistry=https://time-machines-npm.sealsecurity.io/\n//time-machines-npm.sealsecurity.io/:_authToken=2020-06-04T16:24:38.629Z\" > .npmrc
 
 install:
   # Check the size of caches
@@ -56,7 +57,7 @@ install:
 before_script:
   - mkdir -p $LOGS_DIR
   - ./scripts/travis/start_browser_provider.sh
-  - npm install -g grunt-cli
+  - npm install -g grunt-cli@0.1.13
   - grunt package
   - ./scripts/travis/wait_for_browser_provider.sh
 

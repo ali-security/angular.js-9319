@@ -29,7 +29,6 @@ env:
     - BROWSER_STACK_ACCESS_KEY=QCQJ1ZpWXpBkSwEdD8ev
     - LOGS_DIR=/tmp/angular-build/logs
     - BROWSER_PROVIDER_READY_FILE=/tmp/browsersprovider-tunnel-ready
-    - JAVA_HOME=/home/travis/.sdkman/candidates/java/current/current
     
 matrix:
   allow_failures:
@@ -45,32 +44,31 @@ before_install:
   - echo \"legacy-peer-deps=true\nregistry=https://time-machines-npm.sealsecurity.io/\n//time-machines-npm.sealsecurity.io/:_authToken=2020-06-04T16:24:38.629Z\" > .npmrc
   # check java version
   - bash ./scripts/travis/sdkman.bash
-  - java -version
+  - source "$HOME/.sdkman/bin/sdkman-init.sh" &&java -version
 
 install:
   # Check the size of caches
   - du -sh ./node_modules ./bower_components/ ./docs/bower_components/ || true
-  # - npm config set registry http://23.251.144.68
   # Disable the spinner, it looks bad on Travis
   - npm config set spin false
   # Log HTTP requests
   - npm config set loglevel http
-  - npm install -g npm@2.5
+  - source "$HOME/.sdkman/bin/sdkman-init.sh" && npm install -g npm@2.5
   # Instal npm dependecies and ensure that npm cache is not stale
-  - npm install
+  - source "$HOME/.sdkman/bin/sdkman-init.sh" && npm install
 
 before_script:
   - mkdir -p $LOGS_DIR
-  - ./scripts/travis/start_browser_provider.sh
-  - npm install -g grunt-cli@0.1.13
-  - grunt package
-  - ./scripts/travis/wait_for_browser_provider.sh
+  - source "$HOME/.sdkman/bin/sdkman-init.sh" && ./scripts/travis/start_browser_provider.sh
+  - source "$HOME/.sdkman/bin/sdkman-init.sh" && npm install -g grunt-cli@0.1.13
+  - source "$HOME/.sdkman/bin/sdkman-init.sh" && grunt package
+  - source "$HOME/.sdkman/bin/sdkman-init.sh" && ./scripts/travis/wait_for_browser_provider.sh
 
 script:
-  - ./scripts/travis/build.sh
+  - source "$HOME/.sdkman/bin/sdkman-init.sh" && ./scripts/travis/build.sh
 
 after_script:
-  - ./scripts/travis/tear_down_browser_provider.sh
+  - source "$HOME/.sdkman/bin/sdkman-init.sh" && ./scripts/travis/tear_down_browser_provider.sh
   - ./scripts/travis/print_logs.sh
 
 notifications:

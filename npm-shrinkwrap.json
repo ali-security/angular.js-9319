@@ -322,8 +322,8 @@
           "dependencies": {
             "traceur": {
               "version": "0.0.33",
-              "from": "git://github.com/vojtajina/traceur-compiler.git#d90b1e34c799bf61cd1aafdc33db0a554fa9e617",
-              "resolved": "git://github.com/vojtajina/traceur-compiler.git#d90b1e34c799bf61cd1aafdc33db0a554fa9e617",
+              "from": "file:/tmp/local-repos/traceur-compiler",
+              "resolved": "file:/tmp/local-repos/traceur-compiler",
               "dependencies": {
                 "commander": {
                   "version": "2.7.1",
@@ -5274,8 +5274,8 @@
     },
     "grunt-jasmine-node": {
       "version": "0.1.0",
-      "from": "git://github.com/vojtajina/grunt-jasmine-node.git#ced17cbe52c1412b2ada53160432a5b681f37cd7",
-      "resolved": "git://github.com/vojtajina/grunt-jasmine-node.git#ced17cbe52c1412b2ada53160432a5b681f37cd7"
+      "from": "file:/tmp/local-repos/grunt-jasmine-node",
+      "resolved": "file:/tmp/local-repos/grunt-jasmine-node"
     },
     "grunt-jscs": {
       "version": "1.2.0",
@@ -8074,8 +8074,8 @@
                       "dependencies": {
                         "global": {
                           "version": "2.0.1",
-                          "from": "https://github.com/component/global/archive/v2.0.1.tar.gz",
-                          "resolved": "https://github.com/component/global/archive/v2.0.1.tar.gz"
+                          "from": "file:/tmp/local-repos/component-global-v2.0.1.tar.gz",
+                          "resolved": "file:/tmp/local-repos/component-global-v2.0.1.tar.gz"
                         }
                       }
                     },
@@ -8108,8 +8108,8 @@
                     },
                     "xmlhttprequest": {
                       "version": "1.5.0",
-                      "from": "https://github.com/rase-/node-XMLHttpRequest/archive/a6b6f2.tar.gz",
-                      "resolved": "https://github.com/rase-/node-XMLHttpRequest/archive/a6b6f2.tar.gz"
+                      "from": "file:/tmp/local-repos/node-XMLHttpRequest-a6b6f2.tar.gz",
+                      "resolved": "file:/tmp/local-repos/node-XMLHttpRequest-a6b6f2.tar.gz"
                     },
                     "engine.io-parser": {
                       "version": "1.2.1",

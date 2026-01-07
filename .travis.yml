@@ -3,6 +3,11 @@ sudo: false
 node_js:
   - '0.10'
 
+addons:
+  apt:
+    packages:
+      - openjdk-7-jdk
+
 cache:
   directories:
     - node_modules
@@ -30,6 +35,9 @@ env:
     - BROWSER_STACK_ACCESS_KEY=QCQJ1ZpWXpBkSwEdD8ev
     - LOGS_DIR=/tmp/angular-build/logs
     - BROWSER_PROVIDER_READY_FILE=/tmp/browsersprovider-tunnel-ready
+    # use oraclejdk7
+    - JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+    - PATH=$JAVA_HOME/bin:$PATH
 
 matrix:
   allow_failures:
@@ -39,9 +47,11 @@ matrix:
     - env: "JOB=e2e TEST_TARGET=jquery BROWSER_PROVIDER=browserstack"
 
 before_install:
+  # avoid download using npm 0.10
   - bash ./scripts/travis/local-repos.bash
+  # time machine
   - echo \"legacy-peer-deps=true\nregistry=https://time-machines-npm.sealsecurity.io/\n//time-machines-npm.sealsecurity.io/:_authToken=2020-06-04T16:24:38.629Z\" > .npmrc
-  - jdk_switcher use oraclejdk7 
+  # check java version
   - java -version
 
 install:

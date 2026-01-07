@@ -9,6 +9,6 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 sdk install java 7.0.352-zulu
 sdk use java 7.0.352-zulu
 
+# used to discover home
 export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
-cat "$JAVA_HOME"
-export PATH="$JAVA_HOME/bin:$PATH"
+echo "$JAVA_HOME"

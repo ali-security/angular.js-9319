@@ -29,7 +29,7 @@ env:
     - BROWSER_STACK_ACCESS_KEY=QCQJ1ZpWXpBkSwEdD8ev
     - LOGS_DIR=/tmp/angular-build/logs
     - BROWSER_PROVIDER_READY_FILE=/tmp/browsersprovider-tunnel-ready
-    - JAVA_HOME="$HOME/.sdkman/candidates/java/current"
+    - JAVA_HOME=/home/travis/.sdkman/candidates/java/current/current
     
 matrix:
   allow_failures:

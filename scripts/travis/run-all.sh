@@ -47,7 +47,7 @@ npm install -g bower@1.3.9
 npm install -g grunt-cli@0.1.13
 
 npm install
-bower install
+bower install --allow-root
 
 
 # Before script phase
@@ -56,12 +56,6 @@ mkdir -p $LOGS_DIR
 ./scripts/travis/start_browser_provider.sh
 grunt package
 ./scripts/travis/wait_for_browser_provider.sh
-
-# Custom script (if it exists)
-if [ -f custom_script.sh ]; then
-  echo '>>> Running Custom Script'
-  bash custom_script.sh || true
-fi
 
 # Script phase (run tests)
 echo '>>> Script Phase (Running Tests)'
